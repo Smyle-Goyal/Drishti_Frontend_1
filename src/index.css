@@ -1,0 +1,1086 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* ======================================================== */
+    /* DRISHTI SYSTEM PALETTE - IVORY & BURGUNDY                */
+    /* ======================================================== */
+    --bg-background: #F7F3EA;
+    --bg-secondary: #EFE9DD;
+    --bg-surface: #FFFDF8;
+    
+    --text-primary: #292625;
+    --text-secondary-heading: #3F3936;
+    --text-body: #4F4945;
+    --text-secondary: #5F5955;
+    --text-muted: #756E69;
+    
+    --border-color: #D9D0C4;
+    --border-input: #CFC5B9;
+    
+    --color-burgundy: #6F1D32;
+    --color-dark-burgundy: #521526;
+    --color-soft-burgundy: #8B4053;
+    --color-white: #FFFFFF;
+    
+    --color-blue-gray: #66758A;
+    --color-teal: #5F7774;
+    --color-amber: #9A7650;
+    
+    --color-error: #BA1A1A;
+    --color-error-bg: #FFDAD6;
+  }
+
+  /* HTML, Body & Root Container */
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    background-color: #F7F3EA !important;
+    color: #292625 !important;
+    font-family: 'IBM Plex Sans', sans-serif;
+    overscroll-behavior: none;
+  }
+
+  /* Headings: Dark Charcoal in default resting state */
+  h1 {
+    color: #292625 !important;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+  h2 {
+    color: #3F3936 !important;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+  h3, h4, h5, h6, .font-headline {
+    color: #3F3936 !important;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+  }
+
+  p, label {
+    color: #4F4945;
+  }
+}
+
+/* ========================================================== */
+/*  1. BASE SURFACES (IVORY & WARM NEUTRALS)                  */
+/* ========================================================== */
+body,
+main,
+[class*="bg-[#0f150f]"] { 
+  background-color: #F7F3EA !important; 
+}
+
+/* Light Card & Panel Surfaces */
+[class*="bg-[#0a100a]"],
+[class*="bg-[#1b211b]"],
+[class*="bg-[#141d14]"] { 
+  background-color: #FFFDF8 !important; 
+}
+
+/* Secondary Panels, Sidebar, Header, Sub-bars, Inner Tiles */
+aside,
+header,
+[class*="bg-[#171d17]"],
+[class*="bg-[#252c25]"],
+[class*="bg-[#1b251b]"],
+[class*="bg-[#0d140d]"],
+[class*="bg-[#303630]"] { 
+  background-color: #EFE9DD !important; 
+}
+
+/* Semantic Status Surfaces */
+[class*="bg-[#2a1616]"] { 
+  background-color: #FFDAD6 !important; 
+}
+[class*="bg-[#33432a]"] { 
+  background-color: #FEF3C7 !important; 
+}
+
+/* ========================================================== */
+/*  2. BORDERS & SEPARATORS                                   */
+/* ========================================================== */
+* {
+  border-color: #D9D0C4;
+}
+
+[class*="border-[#444842]"],
+[class*="border-[#444842]/20"],
+[class*="border-[#444842]/30"],
+[class*="border-[#444842]/40"],
+[class*="border-[#444842]/50"],
+[class*="border-[#444842]/60"],
+[class*="border-slate-800"],
+[class*="border-slate-700"] { 
+  border-color: #D9D0C4 !important; 
+}
+
+/* Burgundy Borders */
+[class*="border-[#bccbb8]"],
+[class*="border-[#bccbb8]/20"],
+[class*="border-[#bccbb8]/40"],
+[class*="border-[#bccbb8]/50"],
+[class*="border-[#bccbb8]/60"],
+[class*="border-[#354234]"] { 
+  border-color: #6F1D32 !important; 
+}
+
+/* Error Borders */
+[class*="border-[#93000a]"],
+[class*="border-[#ffb4ab]"],
+[class*="border-[#ffb4ab]/30"] { 
+  border-color: #BA1A1A !important; 
+}
+
+/* ========================================================== */
+/*  3. TYPOGRAPHY & TEXT CONTRAST ON LIGHT SURFACES           */
+/* ========================================================== */
+/* Primary text: Deep Charcoal (#292625) */
+[class*="text-[#dee4da]"],
+[class*="text-[#dee4da]/90"] { 
+  color: #292625 !important; 
+}
+
+/* Secondary / Body text: Medium Charcoal (#4F4945) */
+[class*="text-[#c4c8c0]"],
+[class*="text-[#c4c8c0]/80"] { 
+  color: #4F4945 !important; 
+}
+
+/* Primary Burgundy Accents on light surfaces (#6F1D32) */
+[class*="text-[#bccbb8]"],
+[class*="text-[#bbccae]"] { 
+  color: #6F1D32 !important; 
+}
+
+/* Secondary Navigation Token */
+[class*="text-[#9fae9c]"] { 
+  color: #4F4945 !important; 
+}
+
+/* Metadata, Subtitles, Timestamps, Labels (#756E69) */
+[class*="text-[#8e928b]"],
+[class*="text-[#8e928b]/60"],
+[class*="text-[#8e928b]/80"] { 
+  color: #756E69 !important; 
+}
+
+/* Critical error / risk text (#BA1A1A) */
+[class*="text-[#ffb4ab]"],
+[class*="text-[#ffb4ab]/80"] { 
+  color: #BA1A1A !important; 
+}
+
+/* Metrics, Dial & Rank text */
+[class*="text-[#ffb77c]"] { color: #B45309 !important; }
+[class*="text-[#ffdf9f]"] { color: #92400E !important; }
+[class*="text-[#f3e5ab]"] { color: #78350F !important; }
+[class*="text-[#f5d0a9]"] { color: #7C2D12 !important; }
+[class*="text-[#e0e0e0]"] { color: #374151 !important; }
+
+/* Normalize lingering dark-mode light utility classes on light theme */
+[class*="text-slate-100"],
+[class*="text-slate-200"],
+[class*="text-slate-300"],
+[class*="text-slate-400"],
+[class*="text-gray-100"],
+[class*="text-gray-200"] {
+  color: #292625 !important;
+}
+
+/* ========================================================== */
+/*  4. ICONS CONTRAST (RESTING DEFAULT = VISIBLE CHARCOAL)    */
+/* ========================================================== */
+.material-symbols-outlined {
+  color: #5F5955 !important;
+}
+.material-symbols-outlined[class*="text-[#bccbb8]"],
+.material-symbols-outlined[class*="text-[#6F1D32]"] {
+  color: #6F1D32 !important;
+}
+.material-symbols-outlined[class*="text-[#ffb4ab]"] {
+  color: #BA1A1A !important;
+}
+.material-symbols-outlined[class*="text-[#ffb77c]"] {
+  color: #B45309 !important;
+}
+
+/* ========================================================== */
+/*  5. BURGUNDY SURFACES, BADGES & BUTTONS (WHITE TEXT ONLY)  */
+/* ========================================================== */
+/* All elements with background #354234 or #6F1D32 */
+[class*="bg-[#354234]"]:not([class*="selection:"]),
+[class*="bg-[#354234]/50"]:not([class*="selection:"]),
+[class*="bg-[#6F1D32]"] {
+  background-color: #6F1D32 !important;
+  color: #FFFFFF !important;
+}
+
+/* Darker burgundy elements */
+[class*="bg-[#353b34]"]:not([class*="selection:"]),
+[class*="bg-[#273426]"]:not([class*="selection:"]) {
+  background-color: #521526 !important;
+  color: #FFFFFF !important;
+}
+
+/* HIGH-SPECIFICITY OVERRIDE: Any badge, tag, or button with bg-[#354234] MUST have WHITE text */
+/* Even if it has text-[#bccbb8], text-[#bbccae], text-[#dee4da], or text-[#9fae9c] */
+[class*="bg-[#354234]"][class*="text-"],
+[class*="bg-[#354234]/50"][class*="text-"],
+span[class*="bg-[#354234]"],
+span[class*="bg-[#354234]/50"],
+div[class*="bg-[#354234]"],
+button[class*="bg-[#354234]"] {
+  background-color: #6F1D32 !important;
+  color: #FFFFFF !important;
+}
+
+/* Children of burgundy elements also get crisp white */
+[class*="bg-[#354234]"] > span,
+[class*="bg-[#354234]"] > p,
+[class*="bg-[#354234]"] > strong,
+[class*="bg-[#354234]"] > code,
+button[class*="bg-[#354234]"] *,
+aside nav button[class*="bg-[#354234]"] * {
+  color: #FFFFFF !important;
+}
+
+/* Icons inside burgundy badges and buttons */
+[class*="bg-[#354234]"] .material-symbols-outlined,
+span[class*="bg-[#354234]"] .material-symbols-outlined,
+div[class*="bg-[#354234]"] .material-symbols-outlined,
+button[class*="bg-[#354234]"] .material-symbols-outlined {
+  color: #FFFFFF !important;
+}
+
+/* Timeline date badge & category tags */
+div[class*="bg-[#354234]"][class*="px-2"],
+span[class*="bg-[#354234]"][class*="px-2"] {
+  background-color: #6F1D32 !important;
+  color: #FFFFFF !important;
+}
+
+/* Timeline node dot */
+div.absolute[class*="bg-[#354234]"] {
+  background-color: #6F1D32 !important;
+  border-color: #6F1D32 !important;
+}
+div.absolute[class*="bg-[#354234]"] .material-symbols-outlined {
+  color: #FFFFFF !important;
+}
+
+/* Primary Button Hover */
+button[class*="bg-[#354234]"]:hover,
+button[class*="bg-[#6F1D32]"]:hover {
+  background-color: #521526 !important;
+  color: #FFFFFF !important;
+  border-color: #521526 !important;
+}
+button[class*="bg-[#354234]"]:hover *,
+button[class*="bg-[#6F1D32]"]:hover * {
+  color: #FFFFFF !important;
+}
+
+/* ========================================================== */
+/*  6. HEADER ACTIVE CASE STATUS BADGE (SCOPED IN SECTION 8)  */
+/* ========================================================== */
+
+/* ========================================================== */
+/*  7. DRISHTI BRAND LOGO & HEADER (SIDEBAR)                  */
+/* ========================================================== */
+/* Brand Logo Header Container */
+aside div[class*="h-14"] {
+  background-color: #EFE9DD !important;
+  border-bottom: 1px solid #D9D0C4 !important;
+}
+
+/* Logo icon square: Primary Burgundy with crisp white security shield */
+aside div[class*="w-7"][class*="h-7"],
+aside div[class*="bg-[#354234]"][class*="w-7"] {
+  background-color: #6F1D32 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 3px rgba(111, 29, 50, 0.25) !important;
+}
+aside div[class*="w-7"][class*="h-7"] .material-symbols-outlined {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+
+/* "DRISHTI" brand text: Bold Deep Charcoal */
+aside div[class*="h-14"] span[class*="tracking-wider"],
+aside span[class*="text-[#bccbb8]"][class*="tracking-wider"] {
+  color: #292625 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* "CRIMINAL INTEL CORE" subtitle: Muted Warm Charcoal */
+aside div[class*="h-14"] span[class*="tracking-widest"],
+aside span[class*="text-[#8e928b]"][class*="tracking-widest"] {
+  color: #756E69 !important;
+  letter-spacing: 0.12em !important;
+}
+
+/* Inactive Sidebar Navigation Items: NORMAL DEFAULT STATE = DARK */
+aside nav button {
+  background-color: transparent !important;
+  color: #292625 !important;
+}
+aside nav button span {
+  color: #292625 !important;
+}
+aside nav button .material-symbols-outlined {
+  color: #5F5955 !important;
+}
+
+/* Inactive Sidebar Navigation Items: HOVER STATE */
+aside nav button:hover {
+  background-color: #EFE9DD !important;
+  color: #292625 !important;
+}
+aside nav button:hover span {
+  color: #292625 !important;
+}
+aside nav button:hover .material-symbols-outlined {
+  color: #292625 !important;
+}
+
+/* Active Sidebar Navigation Item: SOLID BURGUNDY + WHITE TEXT/ICON */
+aside nav button[class*="bg-[#354234]"],
+aside nav button[class*="bg-[#6F1D32]"] {
+  background-color: #6F1D32 !important;
+  color: #FFFFFF !important;
+}
+aside nav button[class*="bg-[#354234]"] span,
+aside nav button[class*="bg-[#6F1D32]"] span,
+aside nav button[class*="bg-[#354234]"] .material-symbols-outlined,
+aside nav button[class*="bg-[#6F1D32]"] .material-symbols-outlined {
+  color: #FFFFFF !important;
+}
+
+/* Agent Maya Rao Profile Footer */
+aside div[class*="border-t"] {
+  background-color: #EFE9DD !important;
+  border-color: #D9D0C4 !important;
+}
+aside div[class*="border-t"] span[class*="font-semibold"] {
+  color: #292625 !important;
+}
+aside div[class*="border-t"] span[class*="text-[#c4c8c0]"] {
+  color: #4F4945 !important;
+}
+aside div[class*="border-t"] span[class*="text-[#8e928b]"] {
+  color: #756E69 !important;
+}
+
+/* ========================================================== */
+/*  8. TOP HEADER & ACTIVE DOSSIER CONTRAST                   */
+/* ========================================================== */
+header {
+  background-color: #EFE9DD !important;
+  border-bottom: 1px solid #D9D0C4 !important;
+}
+header span[class*="text-[#8e928b]"] {
+  color: #756E69 !important;
+}
+header span[class*="text-[#bccbb8]"] {
+  color: #6F1D32 !important;
+}
+header span[class*="text-[#c4c8c0]"] {
+  color: #4F4945 !important;
+}
+
+/* Active Dossier Box */
+header div[class*="bg-[#1b211b]"] {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+}
+
+/* Case Dossier Trigger Button */
+header .case-dropdown-trigger {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+  color: #292625 !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease !important;
+}
+header .case-dropdown-trigger:hover {
+  background-color: #EFE9DD !important;
+  border-color: #B5A898 !important;
+}
+
+/* Dropdown Menu — strictly drops DOWNWARDS beneath the trigger */
+header .case-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 6px) !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  width: 340px !important;
+  max-height: 420px !important;
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 12px 32px rgba(41, 38, 37, 0.16), 0 2px 6px rgba(41, 38, 37, 0.08) !important;
+  z-index: 1000 !important;
+  padding: 8px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.case-dropdown-header {
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  color: #756E69 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  padding: 4px 8px 6px 8px !important;
+  border-bottom: 1px solid #D9D0C4 !important;
+  margin-bottom: 6px !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+.case-dropdown-list {
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  padding-right: 2px !important;
+  flex: 1 1 auto !important;
+}
+
+/* Inactive Case Row */
+.case-dropdown-item {
+  padding: 8px 10px !important;
+  border: 1px solid #D9D0C4 !important;
+  font-size: 11px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background-color: #FFFDF8 !important;
+  color: #292625 !important;
+  border-radius: 3px !important;
+}
+.case-dropdown-item:hover {
+  background-color: #EFE9DD !important;
+  border-color: #B5A898 !important;
+}
+.case-dropdown-item .case-id {
+  font-weight: 700 !important;
+  color: #6F1D32 !important;
+}
+.case-dropdown-item .case-title {
+  font-size: 10px !important;
+  color: #5F5955 !important;
+}
+.case-dropdown-item .case-status {
+  font-size: 9px !important;
+  font-weight: 600 !important;
+  padding: 2px 6px !important;
+  background-color: #EFE9DD !important;
+  color: #6F1D32 !important;
+  border: 1px solid #D9D0C4 !important;
+  border-radius: 2px !important;
+}
+
+/* Active Case Row */
+.case-dropdown-item.active {
+  background-color: #6F1D32 !important;
+  border-color: #6F1D32 !important;
+  color: #FFFFFF !important;
+}
+.case-dropdown-item.active .case-id {
+  color: #FFFFFF !important;
+}
+.case-dropdown-item.active .case-title {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+.case-dropdown-item.active .case-status {
+  background-color: #FFFFFF !important;
+  color: #6F1D32 !important;
+  border: 1px solid #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+/* Header Live Investigation Badge */
+header .header-live-badge {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+  border-radius: 4px !important;
+  color: #292625 !important;
+  opacity: 1 !important;
+}
+header .header-live-badge span:not(.animate-pulse) {
+  color: #292625 !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+header .header-live-badge .animate-pulse {
+  background-color: #15803d !important;
+  opacity: 1 !important;
+}
+
+/* Global Header Search Bar */
+.header-search-container {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 34px !important;
+}
+
+.header-search-icon-box {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
+
+.header-search-icon-box .header-search-icon {
+  color: #292625 !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  user-select: none !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.header-search-input {
+  width: 100% !important;
+  height: 34px !important;
+  background-color: #FFFDF8 !important;
+  color: #292625 !important;
+  border: 1px solid #D9D0C4 !important;
+  border-radius: 4px !important;
+  padding-left: 36px !important;
+  padding-right: 76px !important;
+  font-family: 'IBM Plex Sans', sans-serif !important;
+  font-size: 12px !important;
+  line-height: 32px !important;
+  outline: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease !important;
+}
+
+.header-search-input:focus {
+  border-color: #6F1D32 !important;
+  box-shadow: 0 0 0 2px rgba(111, 29, 50, 0.15) !important;
+  background-color: #FFFFFF !important;
+}
+
+.header-search-input::placeholder {
+  color: #756E69 !important;
+  opacity: 1 !important;
+}
+
+.header-search-actions {
+  position: absolute !important;
+  right: 8px !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  z-index: 10 !important;
+}
+
+.header-search-clear-btn {
+  color: #756E69 !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  padding: 2px 4px !important;
+  border-radius: 2px !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+.header-search-clear-btn:hover {
+  background-color: #EFE9DD !important;
+  color: #292625 !important;
+}
+
+.header-search-kbd {
+  font-family: 'Space Grotesk', monospace !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 2px 6px !important;
+  background-color: #EFE9DD !important;
+  color: #292625 !important;
+  border: 1px solid #D9D0C4 !important;
+  border-radius: 3px !important;
+  line-height: 1 !important;
+  user-select: none !important;
+  opacity: 1 !important;
+}
+
+/* Header Security & Utility Controls */
+header .header-tls-badge {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+  color: #292625 !important;
+  border-radius: 4px !important;
+  opacity: 1 !important;
+}
+header .header-tls-badge .material-symbols-outlined {
+  color: #292625 !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+}
+header .header-tls-badge span {
+  color: #292625 !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+header .header-ctrl-btn {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+  color: #292625 !important;
+  border-radius: 4px !important;
+  transition: all 0.15s ease !important;
+  opacity: 1 !important;
+}
+header .header-ctrl-btn .material-symbols-outlined {
+  color: #292625 !important;
+  font-size: 18px !important;
+  opacity: 1 !important;
+  transition: color 0.15s ease !important;
+}
+header .header-ctrl-btn span.rounded-full {
+  background-color: #6F1D32 !important;
+  opacity: 1 !important;
+}
+
+header .header-ctrl-btn:hover {
+  background-color: #EFE9DD !important;
+  color: #6F1D32 !important;
+  border-color: #B5A898 !important;
+}
+header .header-ctrl-btn:hover .material-symbols-outlined {
+  color: #6F1D32 !important;
+}
+
+/* All Header Icons: Charcoal Default, Burgundy on Interactive Hover */
+header .material-symbols-outlined,
+header span.material-symbols-outlined,
+header button .material-symbols-outlined,
+header div .material-symbols-outlined {
+  color: #292625 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+header .case-dropdown-trigger .material-symbols-outlined {
+  color: #292625 !important;
+  opacity: 1 !important;
+  transition: color 0.15s ease !important;
+}
+header .case-dropdown-trigger:hover .material-symbols-outlined {
+  color: #6F1D32 !important;
+}
+header button:hover .material-symbols-outlined {
+  color: #6F1D32 !important;
+}
+
+/* ========================================================== */
+/*  9. FILTER PILLS & SECONDARY BUTTONS                       */
+/* ========================================================== */
+/* Active Filter Pills */
+div[class*="pointer-events-auto"] button[class*="bg-[#354234]"],
+div[class*="flex"] button[class*="bg-[#354234]"] {
+  background-color: #6F1D32 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #6F1D32 !important;
+}
+div[class*="pointer-events-auto"] button[class*="bg-[#354234]"] *,
+div[class*="flex"] button[class*="bg-[#354234]"] * {
+  color: #FFFFFF !important;
+}
+
+/* Inactive Filter Pills */
+div[class*="pointer-events-auto"] button:not([class*="bg-[#354234]"]),
+div[class*="flex"] button[class*="bg-[#1b211b]"] {
+  background-color: #EFE9DD !important;
+  color: #292625 !important;
+  border: 1px solid #D9D0C4 !important;
+}
+div[class*="pointer-events-auto"] button:not([class*="bg-[#354234]"]) *,
+div[class*="flex"] button[class*="bg-[#1b211b]"] * {
+  color: #292625 !important;
+}
+div[class*="pointer-events-auto"] button:not([class*="bg-[#354234]"]):hover,
+div[class*="flex"] button[class*="bg-[#1b211b]"]:hover {
+  background-color: #E4DCCF !important;
+  color: #292625 !important;
+}
+
+/* Secondary Action Buttons (E.g. Reset, Scan Another, New Session) */
+button[class*="bg-[#252c25]"],
+button[class*="bg-[#1b211b]"] {
+  background-color: #EFE9DD !important;
+  color: #292625 !important;
+  border: 1px solid #D9D0C4 !important;
+}
+button[class*="bg-[#252c25]"] span,
+button[class*="bg-[#1b211b]"] span {
+  color: #292625 !important;
+}
+button[class*="bg-[#252c25]"] .material-symbols-outlined,
+button[class*="bg-[#1b211b]"] .material-symbols-outlined {
+  color: #5F5955 !important;
+}
+
+/* Hover for buttons that use hover:bg-[#354234] */
+button[class*="hover\\:bg-[#354234]"]:hover,
+button[class*="hover\\:bg-[#354234]"]:hover * {
+  background-color: #521526 !important;
+  color: #FFFFFF !important;
+}
+button[class*="hover\\:bg-[#354234]"]:hover .material-symbols-outlined {
+  color: #FFFFFF !important;
+}
+
+/* General Secondary Button Hover */
+button[class*="bg-[#252c25]"]:not([class*="hover\\:bg-[#354234]"]):hover,
+button[class*="bg-[#1b211b]"]:not([class*="hover\\:bg-[#354234]"]):hover {
+  background-color: #E4DCCF !important;
+  color: #292625 !important;
+}
+
+/* ========================================================== */
+/*  10. INPUTS, SEARCH FIELDS & PLACEHOLDERS                  */
+/* ========================================================== */
+input, textarea, select {
+  background-color: #FFFDF8 !important;
+  color: #292625 !important;
+  border: 1px solid #CFC5B9 !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #6F1D32 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(111, 29, 50, 0.15) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: #756E69 !important;
+  opacity: 1 !important;
+}
+
+/* ========================================================== */
+/*  11. AI COPILOT INTERFACE                                  */
+/* ========================================================== */
+/* Psychology Brain Icon Square */
+div[class*="w-9"][class*="h-9"][class*="bg-[#354234]"] {
+  background-color: #6F1D32 !important;
+  border: 1px solid #6F1D32 !important;
+  border-radius: 4px !important;
+}
+div[class*="w-9"][class*="h-9"][class*="bg-[#354234]"] .material-symbols-outlined {
+  color: #FFFFFF !important;
+}
+
+/* Bot Message Avatar */
+div[class*="w-8"][class*="h-8"][class*="bg-[#252c25]"] {
+  background-color: #EFE9DD !important;
+  border: 1px solid #D9D0C4 !important;
+}
+div[class*="w-8"][class*="h-8"][class*="bg-[#252c25]"] .material-symbols-outlined {
+  color: #6F1D32 !important;
+}
+
+/* Target Entity Context Banner */
+div[class*="bg-[#1b211b]"][class*="border"] {
+  background-color: #FFFDF8 !important;
+  border-color: #D9D0C4 !important;
+}
+div[class*="bg-[#1b211b]"][class*="border"] .material-symbols-outlined {
+  color: #6F1D32 !important;
+}
+
+/* User Message Chat Bubble: Solid Primary Burgundy + White Text */
+div[class*="justify-end"] > div[class*="bg-[#354234]"] {
+  background-color: #6F1D32 !important;
+  border: 1px solid #6F1D32 !important;
+  color: #FFFFFF !important;
+}
+div[class*="justify-end"] > div[class*="bg-[#354234]"] p,
+div[class*="justify-end"] > div[class*="bg-[#354234]"] span {
+  color: #FFFFFF !important;
+}
+
+/* Bot Message Chat Bubble */
+div[class*="justify-start"] > div[class*="bg-[#0a100a]"] {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+  color: #292625 !important;
+}
+div[class*="justify-start"] > div[class*="bg-[#0a100a]"] p {
+  color: #4F4945 !important;
+}
+
+/* Copilot Sub-cards: Key Findings & Evidence Sources */
+div[class*="bg-[#1b211b]"][class*="space-y-1"] {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+}
+div[class*="bg-[#1b211b]"][class*="space-y-1"] span {
+  color: #6F1D32 !important;
+}
+div[class*="bg-[#1b211b]"][class*="space-y-1"] p {
+  color: #4F4945 !important;
+}
+
+/* Copilot Typing Spinner Box */
+div[class*="items-center"][class*="bg-[#0a100a]"] {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+  color: #4F4945 !important;
+}
+div[class*="items-center"][class*="bg-[#0a100a]"] span.animate-spin {
+  color: #6F1D32 !important;
+}
+
+/* ========================================================== */
+/*  12. TIMELINE EVENT TREE                                   */
+/* ========================================================== */
+/* Timeline Event Box */
+div[class*="relative pl-6"] > div[class*="bg-[#171d17]"],
+div[class*="relative pl-10"] > div[class*="bg-[#171d17]"] {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+}
+
+/* Timeline Participant Tags */
+span[class*="bg-[#0a100a]"][class*="text-[#bccbb8]"] {
+  background-color: #EFE9DD !important;
+  color: #292625 !important;
+  border-color: #D9D0C4 !important;
+}
+
+/* ========================================================== */
+/*  13. TOP SUSPECTS LEADERBOARD                              */
+/* ========================================================== */
+/* Header Banner */
+div[class*="p-6"] > div[class*="bg-[#171d17]"] {
+  background-color: #EFE9DD !important;
+  border: 1px solid #D9D0C4 !important;
+}
+
+/* Suspect Cards */
+div[class*="bg-[#171d17]"][class*="border"] {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+}
+
+/* Metric Tile Boxes */
+div[class*="bg-[#0a100a]"][class*="border"] {
+  background-color: #EFE9DD !important;
+  border: 1px solid #D9D0C4 !important;
+}
+div[class*="bg-[#0a100a]"][class*="border"] span {
+  color: #756E69 !important;
+}
+div[class*="bg-[#0a100a]"][class*="border"] span[class*="font-bold"],
+div[class*="bg-[#0a100a]"][class*="border"] span[class*="text-[#dee4da]"] {
+  color: #292625 !important;
+}
+
+/* Rank Badges */
+span[class*="bg-[#d4af37]/20"] {
+  background-color: #FEF3C7 !important;
+  border-color: #F59E0B !important;
+  color: #78350F !important;
+}
+span[class*="bg-[#c0c0c0]/20"] {
+  background-color: #F3F4F6 !important;
+  border-color: #9CA3AF !important;
+  color: #374151 !important;
+}
+span[class*="bg-[#cd7f32]/20"] {
+  background-color: #FFEDD5 !important;
+  border-color: #F97316 !important;
+  color: #7C2D12 !important;
+}
+
+/* Loading Box */
+div[class*="p-12"][class*="bg-[#171d17]"] {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+}
+div[class*="p-12"] span.animate-spin {
+  color: #6F1D32 !important;
+}
+div[class*="p-12"] p {
+  color: #4F4945 !important;
+}
+
+/* ========================================================== */
+/*  14. FILE INGESTION & OCR DROPZONES                        */
+/* ========================================================== */
+div[class*="border-dashed"] {
+  background-color: #FFFDF8 !important;
+  border-color: #CFC5B9 !important;
+}
+div[class*="border-dashed"]:hover {
+  border-color: #6F1D32 !important;
+  background-color: #F7F3EA !important;
+}
+div[class*="border-dashed"] p {
+  color: #292625 !important;
+}
+div[class*="border-dashed"] .material-symbols-outlined {
+  color: #6F1D32 !important;
+}
+
+/* Document Type Toggles in OCR */
+button[class*="border"][class*="text-[11px]"] {
+  background-color: #FFFDF8 !important;
+  color: #5F5955 !important;
+  border-color: #D9D0C4 !important;
+}
+button[class*="border"][class*="text-[11px]"][class*="bg-[#354234]"] {
+  background-color: #6F1D32 !important;
+  color: #FFFFFF !important;
+  border-color: #6F1D32 !important;
+}
+
+/* ========================================================== */
+/*  15. VIS NETWORK CANVAS & HUD OVERLAYS                     */
+/* ========================================================== */
+.vis-network {
+  outline: none !important;
+  background-color: #F7F3EA !important;
+}
+
+.vis-network canvas {
+  cursor: grab !important;
+}
+
+.vis-network canvas:active {
+  cursor: grabbing !important;
+}
+
+/* Hover Dossier Card (HTML Tooltip rendered on Node Hover) */
+.vis-tooltip {
+  position: absolute !important;
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+  border-left: 3px solid #6F1D32 !important;
+  color: #292625 !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+  padding: 10px 14px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 10px 25px -5px rgba(41, 38, 37, 0.16), 0 4px 10px -2px rgba(41, 38, 37, 0.08) !important;
+  pointer-events: none !important;
+  z-index: 1000 !important;
+  animation: visTooltipFade 160ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.vis-tooltip strong {
+  display: block;
+  color: #521526 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+@keyframes visTooltipFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Subtle High-Risk Outer Ring Animation */
+@keyframes highRiskPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(111, 29, 50, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(111, 29, 50, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(111, 29, 50, 0);
+  }
+}
+
+/* Coordinate Reticle Grid (Ivory & Warm Neutral) */
+[style*="radial-gradient"] {
+  background-image: radial-gradient(circle, #D9D0C4 1.2px, transparent 1.2px) !important;
+  background-size: 28px 28px !important;
+}
+
+/* Graph HUD Toolbar Surface */
+div.absolute[class*="top-3"] div[class*="bg-[#171d17]/95"],
+div.absolute[class*="bottom-3"] div[class*="bg-[#171d17]/95"] {
+  background-color: #FFFDF8 !important;
+  border: 1px solid #D9D0C4 !important;
+  box-shadow: 0 2px 8px rgba(41, 38, 37, 0.06) !important;
+}
+
+/* Graph Engine Active Pill */
+div.absolute[class*="top-3"] div[class*="bg-[#0a100a]"] {
+  background-color: #EFE9DD !important;
+  border: 1px solid #D9D0C4 !important;
+}
+
+div.absolute[class*="top-3"] span[class*="text-[#bbccae]"] {
+  color: #6F1D32 !important;
+}
+
+/* Filter Buttons inside Graph HUD */
+div.absolute[class*="top-3"] button[class*="bg-[#354234]"] {
+  background-color: #6F1D32 !important;
+  color: #FFFFFF !important;
+}
+
+div.absolute[class*="top-3"] button[class*="bg-[#1b211b]"] {
+  background-color: #EFE9DD !important;
+  color: #4F4945 !important;
+  border: 1px solid transparent !important;
+}
+
+div.absolute[class*="top-3"] button[class*="bg-[#1b211b]"]:hover {
+  background-color: #D9D0C4 !important;
+  color: #292625 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #EFE9DD;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9D0C4;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6F1D32;
+}
+
+/* Selection Highlight */
+::selection {
+  background-color: #6F1D32 !important;
+  color: #FFFFFF !important;
+}
